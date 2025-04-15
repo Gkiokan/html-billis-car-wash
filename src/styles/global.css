@@ -12,10 +12,10 @@ html, body {
 }
 
 .btn {
-    @apply p-4 px-6 rounded transition;
-    @apply bg-[var(--imo-dark)]/80 backdrop-blur-md; 
+    @apply p-4 px-6 rounded transition duration-300;
+    @apply bg-[var(--imo-dark)]/80 hover:bg-[var(--imo-light)] backdrop-blur-md; 
     @apply text-white font-medium;
-    @apply hover:bg-[var(--imo-light)];
+    @apply cursor-pointer;
 }
 
 .title {
@@ -48,4 +48,20 @@ html, body {
 section {    
     @apply py-12;
     @apply px-4;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
 }
