@@ -30,29 +30,30 @@
   </footer>
 
   <script>
-    // Einfache Animation für Elemente beim Scrollen
-    document.addEventListener('DOMContentLoaded', () => {
-      const navbar = document.querySelector('.navbar');
-      
-    //   window.addEventListener('scroll', () => {
-    //     if (window.scrollY > 100) {
-    //       navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-    //       navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    //     } else {
-    //       navbar.style.background = 'rgba(255, 255, 255, 0.9)';
-    //       navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    //     }
-    //   });
-      
-      // Smooth Scroll für Navigation Links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
+  document.addEventListener('DOMContentLoaded', () => {
+    // Get navbar height
+    const navbar = document.querySelector('header');
+    const navbarHeight = navbar.offsetHeight;
+    
+    // Smooth scroll with offset
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = targetPosition - navbarHeight;
           
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
+          window.scrollTo({
+            top: offsetPosition,
             behavior: 'smooth'
           });
-        });
+        }
       });
     });
+  });
   </script>
