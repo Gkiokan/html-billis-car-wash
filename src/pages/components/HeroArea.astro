@@ -1,8 +1,23 @@
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-content fade-in">
-      <h1>Premium Autowäsche & Aufbereitung in Schorndorf</h1>
-      <p>Professionelle Fahrzeugpflege für jeden Anspruch - vom Kleinwagen bis zum Luxusfahrzeug</p>
-      <a href="#pricing" class="cta-button">Unsere Angebote</a>
+---
+import GTR from '~/assets/nissan-gtr-black-wash.jpg'
+
+---
+<!-- Hero Section -->
+<section class="hero h-100 border-0 bg-natural-900 relative" id="home">
+    <div class="absolute top-0 left-0 left-0 right-0 z-1 w-full h-full">
+      <div class="absolute top-0 left-0 left-0 right-0 z-1 w-full h-full 
+            bg-cover bg-center
+            contrast-200 saturate-50 opacity-80" 
+          style={`background-image:url(${GTR.src})`} />
+
+      <div class="absolute top-0 left-0 left-0 right-0 z-2 w-full h-full bg-blue-500 opacity-50 mix-blend-multiply" />
+      <div class="absolute top-0 left-0 left-0 right-0 z-2 w-full h-full bg-neutral-900 opacity-30 mix-blend-multiply" />
     </div>
-  </section>
+
+    <div class="relative z-5 hero-content fade-in">
+      <h1 class="text-4xl font-bold">Premium Autowäsche & Aufbereitung in Schorndorf</h1>
+      <p class="text-xl">Professionelle Fahrzeugpflege für jeden Anspruch - vom Kleinwagen bis zum Luxusfahrzeug</p>
+      
+      <a href="#pricing" class="btn">Unsere Angebote</a>
+    </div>
+</section>

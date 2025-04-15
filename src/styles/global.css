@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+:root {
+    --imo-mid: #4171BB;
+    --imo-dark: #132A96;
+    --imo-light: #39BBEB;
+    --imo-purple: #2C2AA1;
+}
+
+.btn {
+    @apply p-4 px-6 rounded transition;
+    @apply bg-[var(--imo-dark)] text-white font-medium;
+    @apply hover:bg-[var(--imo-light)];
+}
+
+html, body {
+    height: 100%;    
+}

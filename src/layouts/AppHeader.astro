@@ -1,17 +1,113 @@
 ---
-import '../css/base.css'
+import { Image } from 'astro:assets';
+import ImoLoveYourCar from '~/assets/imo-love-your-car.png'
 ---
-<!-- Navbar -->
-<nav class="navbar">
-    <div class="logo">
-      Billis<span>CarWash</span>
-    </div>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">Über uns</a>
-      <a href="#pricing">Preise</a>
-      <a href="#contact">Kontakt</a>
-    </div>
-    <a href="#contact" class="cta-button">Termin buchen</a>
-</nav>
+
+<header class="bg-[var(--imo-dark)]/40 text-white font-medium shadow-lg fixed w-full top-0 left-0 right-0 z-50">
+	<div class="backdrop-blur-md">
+		<div class="container mx-auto px-6 py-2 flex justify-between items-center">
+			<!-- Logo/Brand -->
+			<a href="/" class="text-2xl font-bold">
+			<span class="text-[var(--imo-dark)]">Billis</span>CarWash
+			</a>
+
+			<!-- Desktop Navigation -->
+			<nav class="hidden lg:flex space-x-10">
+			<a href="#home" class="px-3 py-4 whitespace-nowrap rounded-lg hover:bg-gray-700 hover:text-blue-400 transition duration-300">BillisCarWash</a>
+			<a href="#services" class="px-3 py-4 whitespace-nowrap rounded-lg hover:bg-gray-700 hover:text-blue-400 transition duration-300">Dienstleistung</a>
+			<a href="#pricing" class="px-3 py-4 whitespace-nowrap rounded-lg hover:bg-gray-700 hover:text-blue-400 transition duration-300">Preise</a>
+			<a href="#about" class="px-3 py-4 whitespace-nowrap rounded-lg hover:bg-gray-700 hover:text-blue-400 transition duration-300">Über uns</a>
+			<a href="#contact" class="px-3 py-4 whitespace-nowrap rounded-lg hover:bg-gray-700 hover:text-blue-400 transition duration-300">Kontakt</a>
+			</nav>
+
+			<!-- Mobile Menu Button -->
+			<button id="mobile-menu-button" class="lg:hidden focus:outline-none p-2 rounded-lg hover:bg-gray-700 transition duration-300">
+			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+			</svg>
+			</button>
+		</div>
+	</div>
+
+	<!-- Mobile Menu Structure -->
+	<div id="mobile-menu-overlay" class="lg:hidden fixed inset-0 z-40 hidden">
+		<!-- Backdrop -->
+		<div id="mobile-menu-backdrop" 
+			class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 transition-opacity duration-300"
+			onclick="closeMenu()"></div>
+		
+		<!-- Menu Panel -->
+		<div id="mobile-menu" class="fixed z-50 inset-y-0 right-0 w-64 h-[100vh] shadow-xl 
+				_bg-[var(--imo-dark)]/40 bg-gray-900/60
+				transform translate-x-full transition-transform duration-300 ease-in-out">
+		<div class="relative h-full flex flex-col pt-20 px-4 space-y-6">
+			<a href="#home" class="block px-4 py-3 rounded-lg hover:bg-gray-700 hover:text-blue-400 transition duration-300">BillisCarWash</a>
+			<a href="#services" class="block px-4 py-3 rounded-lg hover:bg-gray-700 hover:text-blue-400 transition duration-300">Dienstleistung</a>
+			<a href="#pricing" class="block px-4 py-3 rounded-lg hover:bg-gray-700 hover:text-blue-400 transition duration-300">Preise</a>
+			<a href="#about" class="block px-4 py-3 rounded-lg hover:bg-gray-700 hover:text-blue-400 transition duration-300">Über uns</a>
+			<a href="#contact" class="block px-4 py-3 rounded-lg hover:bg-gray-700 hover:text-blue-400 transition duration-300">Kontakt</a>
+			
+			<div class="mt-8">
+				<Image class="w-30 mx-auto" src={ImoLoveYourCar} alt="IMO Love Your Car" />
+			</div>
+		</div>
+		
+		<!-- Close Button -->
+		<button id="mobile-menu-close" 
+				class="absolute top-2 right-6 p-2 rounded-full hover:bg-gray-700 transition duration-300"
+				onclick="closeMenu()">
+			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+			</svg>
+		</button>
+		</div>
+	</div>
+</header>
+
+<script is:inline>
+  function toggleMenu() {
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const menu = document.getElementById('mobile-menu');
+    const backdrop = document.getElementById('mobile-menu-backdrop');
+    
+    overlay.classList.toggle('hidden');
+    document.body.classList.toggle('overflow-hidden');
+    
+    if (overlay.classList.contains('hidden')) {
+      backdrop.classList.remove('opacity-100');
+      backdrop.classList.add('opacity-0');
+      menu.classList.add('translate-x-full');
+    } else {
+      // Small timeout to ensure display happens before animation
+      setTimeout(() => {
+        backdrop.classList.remove('opacity-0');
+        backdrop.classList.add('opacity-100');
+        menu.classList.remove('translate-x-full');
+      }, 10);
+    }
+  }
+
+  function closeMenu() {
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const menu = document.getElementById('mobile-menu');
+    const backdrop = document.getElementById('mobile-menu-backdrop');
+    
+    backdrop.classList.remove('opacity-100');
+    backdrop.classList.add('opacity-0');
+    menu.classList.add('translate-x-full');
+    
+    // Wait for animation to complete before hiding
+    setTimeout(() => {
+      overlay.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }, 300);
+  }
+
+  // Set up event listeners
+  document.getElementById('mobile-menu-button').addEventListener('click', toggleMenu);
+  
+  // Close when clicking on links
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>
