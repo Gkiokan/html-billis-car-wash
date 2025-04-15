@@ -2,7 +2,13 @@
 import { Image } from 'astro:assets'
 import Flyer from '~/../public/images/billis-car-wash-flyer.png'
 
+import CarWash from '~/assets/services/carwash.avif'
+import InnenReinigung from '~/assets/services/innenreinigung.jpg'
+import Politur from '~/assets/services/politur.avif'
+import KomplettReinigung from '~/assets/services/komplettreinigung.jpg'
 import Dampfreinigung from '~/assets/services/dampfreinigung.avif'
+import MotorWash from '~/assets/services/motorwash.jpg'
+
 ---
 <!-- Services Section -->
 
@@ -20,28 +26,28 @@ import Dampfreinigung from '~/assets/services/dampfreinigung.avif'
 
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1400px] mx-auto">
 		<div class="card">
-			<div class="service-img" style="background-image: url('https://img.freepik.com/fotos-premium/arbeiter-der-auto-mit-aktivem-schaum-auf-einer-autowaesche-waescht_179755-9806.jpg?w=900')"></div>
+			<div class="service-img" style={`background-image: url(${CarWash.src})`} />
 			<div class="service-content">
 				<h3 class="font-medium">Autowäsche</h3>
 				<p>Gründliche Außenreinigung mit hochwertigen Produkten für einen perfekten Glanz ohne Kratzer. Ideal für die regelmäßige Pflege.</p>
 			</div>
 		</div>
 		<div class="card">
-			<div class="service-img" style="background-image: url('https://img.freepik.com/fotos-kostenlos/schoenes-auto-beim-innenreinigungsservice_23-2149212255.jpg?t=st=1744744629~exp=1744748229~hmac=de1ee7e771f3b645cca0d5c08164465bba09de7852a3f09bfd3a45cd6c87fa98&w=996')"></div>
+			<div class="service-img" style={`background-image: url(${InnenReinigung.src})`} />
 			<div class="service-content">
 					<h3 class="font-medium">Premium Innenreinigung</h3>
 					<p>Tiefenreinigung des Innenraums inklusive Polster, Teppiche und schwer zugänglicher Bereiche. Für ein frisches Fahrgefühl.</p>
 			</div>
 		</div>
 		<div class="card">
-			<div class="service-img" style="background-image: url('https://img.freepik.com/fotos-kostenlos/detaillierungsstation-fuer-autowaschanlagen_1303-22307.jpg?t=st=1744744443~exp=1744748043~hmac=d8b793ed147860b2392f2ee056cd45a290c3d733a378227d0ceadeaf44a54cc2&w=996')"></div>
+			<div class="service-img" style={`background-image: url(${Politur.src})`} />
 			<div class="service-content">
 					<h3 class="font-medium">Profi-Politur</h3>
 					<p>Entfernung von Kratzern und Swirls, Wiederherstellung des ursprünglichen Glanzes Ihres Lacks. Perfekt für ältere Fahrzeuge.</p>
 			</div>
 		</div>
 		<div class="card">
-			<div class="service-img" style="background-image: url('https://img.freepik.com/fotos-premium/ledersitz-mit-schaum-und-reinigungsmittel-mit-buerste-reinigen-arbeiter-im-autoreinigungsservice-reinigen-das-auto-von-innen-detaillierung-des-autoinnenraums_255847-7909.jpg?w=996')"></div>
+			<div class="service-img" style={`background-image: url(${KomplettReinigung.src})`} />
 			<div class="service-content">
 				<h3 class="font-medium">Komplettaufbereitung</h3>
 				<p>Das Rundum-Sorglos-Paket für Ihr Fahrzeug - innen wie außen wieder wie neu. Ideal vor dem Verkauf oder für Liebhaberfahrzeuge.</p>
@@ -57,7 +63,7 @@ import Dampfreinigung from '~/assets/services/dampfreinigung.avif'
 		</div>	
 
 		<div class="card">
-			<div class="service-img" style="background-image: url('https://img.freepik.com/fotos-kostenlos/mann-poliert-auto-innen-beim-autoservice_1303-26881.jpg?t=st=1744744587~exp=1744748187~hmac=1578d5c1700733085dab6231eb62fef548164eb751ddc5d2c01fac2caf026535&w=996')"></div>
+			<div class="service-img" style={`background-image: url(${MotorWash.src})`} />
 			<div class="service-content">
 				<h3 class="font-medium">Motorwäsche</h3>
 				<p>Das Rundum-Sorglos-Paket für Ihr Fahrzeug - innen wie außen wieder wie neu. Ideal vor dem Verkauf oder für Liebhaberfahrzeuge.</p>
