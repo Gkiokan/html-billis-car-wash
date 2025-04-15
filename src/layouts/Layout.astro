@@ -1,14 +1,81 @@
-<!doctype html>
-<html lang="en">
+---
+import AppHeader from "./AppHeader.astro"
+import AppFooter from "./AppFooter.astro"
+---
+<!DOCTYPE html>
+<html lang="de">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta charset="UTF-8" />	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+
+		<title>Billis Car Wash - Premium Autowäsche & Aufbereitung in Schorndorf</title>
+  
+		<!-- SEO Meta-Tags -->
+		<meta name="description" content="Professionelle Autowäsche und Fahrzeugaufbereitung in Schorndorf. Komplettaufbereitung, Politur und Innenreinigung für alle Fahrzeugklassen. Jetzt Termin buchen!">
+		<meta name="keywords" content="Autowäsche Schorndorf, Fahrzeugaufbereitung, Autoaufbereitung, Innenreinigung Auto, Politur, Premium Autowäsche">
+		<meta name="author" content="Billis Car Wash">
+		
+		<!-- Open Graph Tags für Social Media -->
+		<meta property="og:title" content="Billis Car Wash - Premium Autowäsche in Schorndorf">
+		<meta property="og:description" content="Professionelle Autowäsche und Fahrzeugaufbereitung für alle Fahrzeugklassen. Jetzt Termin vereinbaren!">
+		<meta property="og:url" content="https://billis-car-wash.de">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://billis-car-wash.de/images/og-image.jpg">
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href="https://billis-car-wash.de">
+		
+		<!-- Favicon -->
+		<link rel="icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		
+		<!-- Strukturierte Daten für Google -->
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "AutoRepair",
+		  "name": "Billis Car Wash",
+		  "image": "https://billis-car-wash.de/images/logo.jpg",
+		  "@id": "https://billis-car-wash.de",
+		  "url": "https://billis-car-wash.de",
+		  "telephone": "+4916094129593",
+		  "address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Stuttgarter Str. 25",
+			"addressLocality": "Schorndorf",
+			"postalCode": "73614",
+			"addressCountry": "DE"
+		  },
+		  "geo": {
+			"@type": "GeoCoordinates",
+			"latitude": 48.80531957132511,
+			"longitude": 9.513916977745525
+		  },
+		  "openingHoursSpecification": [
+			{
+			  "@type": "OpeningHoursSpecification",
+			  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+			  "opens": "08:00",
+			  "closes": "19:00"
+			},
+			{
+			  "@type": "OpeningHoursSpecification",
+			  "dayOfWeek": "Saturday",
+			  "opens": "09:00",
+			  "closes": "16:00"
+			}
+		  ],
+		  "priceRange": "€€",
+		  "servesCuisine": "Autowäsche, Fahrzeugaufbereitung, Innenreinigung, Politur"
+		}
+		</script>
+
 	</head>
 	<body>
+		<AppHeader />
 		<slot />
+		<AppFooter />
 	</body>
 </html>
 
