@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html, body {
+    height: 100%;    
+}
+
 :root {
     --imo-mid: #4171BB;
     --imo-dark: #132A96;
@@ -9,10 +13,35 @@
 
 .btn {
     @apply p-4 px-6 rounded transition;
-    @apply bg-[var(--imo-dark)] text-white font-medium;
+    @apply bg-[var(--imo-dark)]/80 backdrop-blur-md; 
+    @apply text-white font-medium;
     @apply hover:bg-[var(--imo-light)];
 }
 
-html, body {
-    height: 100%;    
+.card {
+    @apply bg-white;
+    @apply rounded border-10 border-white;
+    @apply overflow-hidden shadow-lg relative;
+}
+
+.card h3 {
+    @apply text-2xl py-4 pt-2;    
+}
+
+.card .service-content {
+    /* @apply bg-neutral-900/50 text-white mt-[-50%]; */
+    @apply p-4;
+}
+
+.card .service-img {
+    @apply rounded;
+    @apply shadow-xl;
+    @apply min-h-[400px];
+    @apply bg-cover bg-center;
+}
+
+
+section {    
+    @apply py-12;
+    @apply px-4;
 }

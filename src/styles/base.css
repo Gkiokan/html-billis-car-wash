@@ -3,51 +3,10 @@
     scroll-behavior: smooth;
   }
   
-  .cta-button {
-    background-color: var(--primary);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-  
-  .cta-button:hover {
-    background-color: var(--primary-dark);
-  }
-  
-  /* Hero Section */
-  .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1920/1080') center/cover no-repeat;
-    color: white;
-    text-align: center;
-    padding: 0 1rem;
-  }
-  
-  .hero-content {
-    max-width: 800px;
-  }
-  
-  .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-  }
-  
+
   /* Sections */
   section {
-    padding: 5rem 10%;
+    padding: 0 20px;
   }
   
   .section-title {
@@ -65,46 +24,6 @@
     color: var(--gray);
     max-width: 600px;
     margin: 0 auto;
-  }
-  
-  /* Services */
-  .services {
-    background-color: white;
-  }
-  
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  
-  .service-card {
-    background: white;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-  }
-  
-  .service-img {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .service-content {
-    padding: 1.5rem;
-  }
-  
-  .service-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary);
   }
   
   /* About */
