@@ -1,15 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import ImoLogo from '~/assets/imo-logo.png'
+---
 <!-- About Section -->
-
 <div class="h-[100px]" />
 
 <section class="bg-neutral-900 text-white" id="about">
 	<div class="container flex flex-col lg:flex-row items-center align-center gap-12 py-20 mx-auto">
 		<div class="about-img rounded w-full h-full">
-			<div class="h-[460px] bg-neutral-500 rounded-lg" />
+			<div class="h-[460px] bg-neutral-50 rounded-lg flex justify-center items-center">
+				<Image class="w-[auto]" src={ImoLogo} alt="IMO Love Your Car" />
+			</div>
 		</div>
 
 		<div class="about-content text-lg">
-			<h2 class="py-4 text-5xl">Über Billis Car Wash</h2>
+			<h2 class="py-4 text-5xl font-bold">Über Billis Car Wash</h2>
 			<h3 class="font-bold text-[var(--imo-light)] uppercase mb-8">Unter neuer Leitung ab Mai 2025!</h3>
 
 			<div class="text-neutral-300">
