@@ -1,11 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import ImoLogo from '~/assets/imo-logo.png'
+---
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-12">
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
       <!-- About Column -->
       <div class="space-y-4">
-        <h3 class="text-xl font-bold text-blue-400">Billis Car Wash</h3>
-        <p class="text-gray-300">Ihre erste Adresse für professionelle Autowäsche und Fahrzeugaufbereitung in Schorndorf und Umgebung.</p>
+        <h3 class="text-xl font-bold text-blue-400">Billis Car Wash</h3>        
+        <p class="text-gray-300">
+            Ihre erste Adresse für professionelle Autowäsche und Fahrzeugaufbereitung in Schorndorf und Umgebung.
+        </p>
+        <Image class="w-20 mt-8" src={ImoLogo} alt="IMO Love Your Car" />
       </div>
 
       <!-- Links Column -->
